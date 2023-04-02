@@ -7,7 +7,8 @@ function App() {
 
   const getIP = async () => {
     setIsLoading(true);
-    const res = await axios.get();
+    const apiUrl = import.meta.env.VITE_REACT_API_URL;
+    const res = await axios.get(apiUrl);
     setIsLoading(false);
     setIp(res.data.ip);
   };
